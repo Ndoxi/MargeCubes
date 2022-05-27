@@ -1,0 +1,54 @@
+{
+    "name": "PlayerInputActions",
+    "maps": [
+        {
+            "name": "Mobile",
+            "id": "3f9b9e59-9151-4a7c-b75e-46fce3148807",
+            "actions": [
+                {
+                    "name": "Touch",
+                    "type": "Value",
+                    "id": "1bf5b6fc-78c2-4d1d-9e26-c72759ff710e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "TouchMove",
+                    "type": "Value",
+                    "id": "c04fc631-3b3e-4bec-998c-dc065f99ba04",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f37e0aff-743a-46c0-9710-95704834fee4",
+                    "path": "<Touchscreen>/touch0/delta/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchMove",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7b9cd4e5-588d-465d-bc27-85bf267446ad",
+                    "path": "<Touchscreen>/touch*/Press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Touch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
