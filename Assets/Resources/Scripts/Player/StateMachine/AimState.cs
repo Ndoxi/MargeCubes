@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class AimState : BaseState
 {
     public AimState(StateMachine context) : base(context) { }

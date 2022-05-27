@@ -20,7 +20,6 @@ public class CubeScript : MonoBehaviour
         float cubeValue = Mathf.Pow(2, cubeLevel);
 
         _scriptManager.Behavior.CubeLevel = cubeLevel;
-        _scriptManager.Behavior.CubeValue = (int)cubeValue;
         _cubeRenderer.material = cubeMaterial;
 
         foreach (TextMeshPro textMeshPro in _textMeshPros)

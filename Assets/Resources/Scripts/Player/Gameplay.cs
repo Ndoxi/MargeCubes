@@ -8,26 +8,35 @@ public class Gameplay : MonoBehaviour
     [Header("Player script manager")]
     [SerializeField] private PlayerScriptManager _scriptManager;
 
-    [Header("Cube to fire")]
-    [SerializeField] private GameObject _cube;
-
     private CubeControls _cubeControls;
 
 
-    private void Start()
+    private void OnEnable()
     {
-        SetNewCubeToFire(_cube);
+        SpawnerScript.NewCubeSpawnedEvent += SetNewCubeToFire;
+        CubeControls.FireCubeEvent += ClearCurrentCubeData;
+    }
+
+
+    private void OnDisable()
+    {
+        SpawnerScript.NewCubeSpawnedEvent -= SetNewCubeToFire;
+        CubeControls.FireCubeEvent -= ClearCurrentCubeData;
     }
 
 
     public void AimCube()
     {
+        if (_cubeControls == null) { return; }
+
         _cubeControls.AimCube(_scriptManager.InputHandler.TuchDeltaX);
     }
 
 
     public void FireCube()
     {
+        if (_cubeControls == null) { return; }
+
         _cubeControls.FireCube();
     }
 
@@ -35,14 +44,12 @@ public class Gameplay : MonoBehaviour
 
     public void SetNewCubeToFire(GameObject newCube)
     {
-        _cube = newCube;
         _cubeControls = newCube.GetComponent<CubeScriptManager>().Controls;
     }
 
 
-    public void ClearCube()
+    public void ClearCurrentCubeData()
     {
-        _cube = null;
         _cubeControls = null;
     }
 }

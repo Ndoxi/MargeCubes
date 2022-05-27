@@ -23,8 +23,7 @@ public class StateMachine : MonoBehaviour
         _idleState = new IdleState(this);
         _aimState = new AimState(this);
 
-        //_currentState = _idleState;
-        _currentState = _aimState;
+        _currentState = _idleState;
     }
 
 

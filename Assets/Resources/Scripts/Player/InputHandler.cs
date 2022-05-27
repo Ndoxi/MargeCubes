@@ -10,8 +10,9 @@ public class InputHandler : MonoBehaviour
     private InputActionPhase _touchPhase;
 
     public float TuchDeltaX { get { return _touchDeltaX; } }
-    public bool IsAimingStarted { get { return _touchPhase == InputActionPhase.Started;  } }
+    public bool IsAimingStarted { get { return _touchPhase != InputActionPhase.Canceled;  } }
     public bool IsAimingEnded { get { return _touchPhase == InputActionPhase.Canceled; } }
+
 
     public void OnTouchMove(InputAction.CallbackContext context)
     {
@@ -22,6 +23,5 @@ public class InputHandler : MonoBehaviour
     public void OnTouch(InputAction.CallbackContext context)
     {
         _touchPhase = context.phase;
-        Debug.Log(context.phase);
     } 
 }
