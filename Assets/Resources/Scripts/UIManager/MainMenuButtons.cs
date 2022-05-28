@@ -10,6 +10,12 @@ public class MainMenuButtons : MonoBehaviour
     [Header("Play button")]
     [SerializeField] private Button _playBytton;
 
+    [Header("LoadingProgressElement")]
+    [SerializeField] private GameObject _loadingProgressElement;
+
+    [Header("Slider")]
+    [SerializeField] private Slider _progressBar;
+
     private const int _mainSceneIndex = 1;
 
 
@@ -27,6 +33,19 @@ public class MainMenuButtons : MonoBehaviour
 
     private void StartGame()
     {
-        SceneManager.LoadScene(_mainSceneIndex);
+        StartCoroutine(LoadGameCoroutine());
+    }
+
+
+    private IEnumerator LoadGameCoroutine()
+    {
+        AsyncOperation loading = SceneManager.LoadSceneAsync(_mainSceneIndex);
+        _loadingProgressElement.SetActive(true);
+
+        while (true)
+        {
+            _progressBar.value = loading.progress;
+            yield return new WaitForEndOfFrame();
+        }
     }
 }
