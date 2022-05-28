@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 5592366469420014891}
   - component: {fileID: 5592366469420014889}
   - component: {fileID: 5592366469420014888}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP) (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 5592366469624880652}
   - component: {fileID: 5592366469624880650}
   - component: {fileID: 5592366469624880653}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP) (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -504,7 +504,7 @@ GameObject:
   - component: {fileID: 5592366469988869542}
   - component: {fileID: 5592366469988869540}
   - component: {fileID: 5592366469988869543}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -675,7 +675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5592366470135428641}
   - component: {fileID: 5592366470135428654}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -715,7 +715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 024c45a956ff59b4e9aa76096a5bc420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scriptManager: {fileID: 0}
+  _scriptManager: {fileID: 5592366468993388933}
   _cubeRenderer: {fileID: 5592366468993388984}
   _textMeshPros:
   - {fileID: 5592366469988869543}
@@ -735,7 +735,7 @@ GameObject:
   - component: {fileID: 5592366470183657490}
   - component: {fileID: 5592366470183657488}
   - component: {fileID: 5592366470183657491}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -907,7 +907,7 @@ GameObject:
   - component: {fileID: 5592366470282294330}
   - component: {fileID: 5592366470282294328}
   - component: {fileID: 5592366470282294331}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP) (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1079,7 +1079,7 @@ GameObject:
   - component: {fileID: 5592366470839974656}
   - component: {fileID: 5592366470839974657}
   - component: {fileID: 5592366470839974670}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gameplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1140,7 +1140,7 @@ GameObject:
   - component: {fileID: 5592366470912336256}
   - component: {fileID: 5592366470912336270}
   - component: {fileID: 5592366470912336257}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP) (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

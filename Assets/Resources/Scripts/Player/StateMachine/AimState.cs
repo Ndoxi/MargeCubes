@@ -1,5 +1,11 @@
+using UnityEngine;
+
+
 public class AimState : BaseState
 {
+    public delegate void ShotCube();
+    public static event ShotCube ShotCubeEvent;
+
     public AimState(StateMachine context) : base(context) { }
 
 
@@ -17,5 +23,10 @@ public class AimState : BaseState
             IdleState newState = context.IdleState;
             context.SetNewState(newState);
         }
+    }
+
+    public override void OnExitState()
+    {
+        ShotCubeEvent?.Invoke();
     }
 }

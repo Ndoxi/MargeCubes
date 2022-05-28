@@ -38,7 +38,7 @@ public class CubeControls : MonoBehaviour
     }
 
 
-    public void Jump()
+    public void LaunchCubeInAir()
     {
         Vector3 force = new Vector3(0, _scriptManager.CubePhysics.FireForce / 5, 0);
         _scriptManager.CubePhysics.Rigidbody.AddForce(force, ForceMode.Impulse);

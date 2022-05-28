@@ -18,15 +18,17 @@ public class CubeColisionHandler : MonoBehaviour
 
         if (_scriptManager.Behavior.CubeLevel != cubeScriptManager.Behavior.CubeLevel) { return; }
 
-        if (_scriptManager.CubePhysics.Velocity < cubeScriptManager.CubePhysics.Velocity)
+        if (_scriptManager.CubePhysics.Velocity >= cubeScriptManager.CubePhysics.Velocity)
         {
-            //Destroy cube with lesser velicity 
+            //Destroy cube with greater velicity and add player score
+            GameManagerScript.AddScoreToPlayer(_scriptManager.Behavior.CubeValue * 2);
             Destroy(gameObject);
         } 
         else
         {
-            //Launch in air cube with greater velocity 
-            _scriptManager.Controls.Jump();
+            //Launch in air cube with lesser velocity and level up it
+            _scriptManager.Controls.LaunchCubeInAir();
+            _scriptManager.Cube.LevelUpCube();
         }
     }
 }

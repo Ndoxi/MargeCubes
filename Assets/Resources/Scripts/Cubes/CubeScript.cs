@@ -15,16 +15,34 @@ public class CubeScript : MonoBehaviour
     [SerializeField] private List<TextMeshPro> _textMeshPros;
 
 
-    public void SetCubeStats(int cubeLevel, Material cubeMaterial)
+    public void SetCubeStats(int cubeLevel)
     {
         float cubeValue = Mathf.Pow(2, cubeLevel);
 
         _scriptManager.Behavior.CubeLevel = cubeLevel;
-        _cubeRenderer.material = cubeMaterial;
+
+        if (cubeLevel > GameManagerScript.LevelMaterials.Count)
+        {
+            _cubeRenderer.material = GameManagerScript.LevelMaterials[-1];
+        } 
+        else
+        {
+            _cubeRenderer.material = GameManagerScript.LevelMaterials[cubeLevel - 1];
+        }
 
         foreach (TextMeshPro textMeshPro in _textMeshPros)
         {
             textMeshPro.text = ((int)cubeValue).ToString();
         }
+    }
+
+
+    public void LevelUpCube()
+    {
+        int currentLevel = _scriptManager.Behavior.CubeLevel;
+        int nextLevel = currentLevel + 1;
+        _scriptManager.Behavior.CubeLevel = nextLevel;
+
+        SetCubeStats(nextLevel);
     }
 }
